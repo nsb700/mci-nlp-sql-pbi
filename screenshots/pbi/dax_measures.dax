@@ -1,0 +1,17 @@
+﻿chartcount = DISTINCTCOUNT(dimChart[chartname]) 
+
+chartcount_all = CALCULATE([chartcount], ALL(dimDiag[diagcodeLvl1])) 
+
+%_of_charts = DIVIDE([chartcount],[chartcount_all])
+
+diagcodeLvl1_countdistinct = DISTINCTCOUNT(dimDiag[diagcodeLvl1])
+
+pagecount = DISTINCTCOUNT(dimChart[pagenumber])
+
+pagecount_all = CALCULATE([pagecount], ALL(dimChart[chartname]))
+
+pagecount_by_chart = CALCULATE([pagecount], ALLEXCEPT(dimChart,dimChart[chartname]))
+
+pagecount_max_of_all_charts = MAXX(VALUES(dimChart[chartname]),[pagecount])
+
+pagecount_min_of_all_charts = MINX(VALUES(dimChart[chartname]),[pagecount])
