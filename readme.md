@@ -345,6 +345,10 @@ In crawlers, create a crawler for s3
 
 ### (6) AWS Glue Crawler for SQL Server (destination)
 
+Create connection to SQL Server 
+
+![Alt text](screenshots/Screenshot-8.png)
+
 In crawlers, create a crawler for SQL Server
 
 ![Alt text](screenshots/07-step-06-img-12.png)
